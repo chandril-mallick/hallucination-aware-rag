@@ -13,14 +13,14 @@ The system follows a modular microservice-like architecture separating retrieval
 
 ```mermaid
 graph TD
-    User[User via Streamlit] -->|Query| API[FastAPI Backend]
-    API -->|Retrieve| Retriever[Retriever Module]
-    Retriever -->|Query| FAISS[(FAISS Vector DB)]
+    User["User via Streamlit"] -->|Query| API["FastAPI Backend"]
+    API -->|Retrieve| Retriever["Retriever Module"]
+    Retriever -->|Query| FAISS[("FAISS Vector DB")]
     FAISS -->|Top-k Chunks| Retriever
-    Retriever -->|Context| Generator[Generator Module (Ollama/Mistral)]
-    Generator -->|Generate| LLM[LLM]
-    LLM -->|Answer w/ Citations| Detector[Hallucination Detector]
-    Detector -->|Verify Attributes| Metrics[Metrics Calculator]
+    Retriever -->|Context| Generator["Generator Module (Ollama/Mistral)"]
+    Generator -->|Generate| LLM["LLM"]
+    LLM -->|Answer w/ Citations| Detector["Hallucination Detector"]
+    Detector -->|Verify Attributes| Metrics["Metrics Calculator"]
     Detector -->|Verify Semantics| Metrics
     Metrics -->|Final Response| API
     API -->|Display| User
