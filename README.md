@@ -24,6 +24,16 @@ graph TD
     Detector -->|Verify Semantics| Metrics
     Metrics -->|Final Response| API
     API -->|Display| User
+
+    %% Styling
+    style User fill:#f9f,stroke:#333,stroke-width:2px
+    style API fill:#00d2ff,stroke:#333,stroke-width:2px
+    style FAISS fill:#ff9933,stroke:#333,stroke-width:2px
+    style LLM fill:#77dd77,stroke:#333,stroke-width:2px
+    style Detector fill:#ff6666,stroke:#333,stroke-width:2px
+    style Metrics fill:#cc99ff,stroke:#333,stroke-width:2px
+    style Generator fill:#fff2cc,stroke:#d6b656,stroke-width:2px
+    style Retriever fill:#dae8fc,stroke:#6c8ebf,stroke-width:2px
 ```
 
 ##  Hallucination Detection Methodology
